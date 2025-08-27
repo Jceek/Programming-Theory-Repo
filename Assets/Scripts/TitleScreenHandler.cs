@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,5 +36,13 @@ public class TitleScreenHandler : MonoBehaviour
     public void BackToTitle()
     {
         SceneManager.LoadScene(0);
+    }
+    public void ExitApplication()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else   
+        Application.Quit(); 
+#endif
     }
 }
