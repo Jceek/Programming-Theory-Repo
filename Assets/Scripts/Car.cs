@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveCar : MonoBehaviour
+public class Car : MonoBehaviour
 
 {
     public float speed = 7;
@@ -20,5 +20,4 @@ public class MoveCar : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
-
 

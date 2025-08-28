@@ -121,8 +121,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2518654614589696560}
   - component: {fileID: 7929553575101045121}
-  - component: {fileID: 3152914445682582749}
   - component: {fileID: 7085067991839150208}
+  - component: {fileID: 3797539402509734588}
   m_Layer: 0
   m_Name: GreenCar
   m_TagString: Untagged
@@ -179,19 +179,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3152914445682582749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2357646485848122301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549aab4ad469ac84b9ef11222e4021f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveCar
-  speed: 3
 --- !u!65 &7085067991839150208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -213,6 +200,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3797539402509734588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357646485848122301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b845232019d864840a0fcbddb918c772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Car
+  speed: 7
 --- !u!1 &2872096070710281763
 GameObject:
   m_ObjectHideFlags: 0

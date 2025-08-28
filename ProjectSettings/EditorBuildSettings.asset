@@ -9,19 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/_TitleScreen.unity
+    path: Assets/Scenes/0_TitleScreen.unity
     guid: 9261c0cc131c6ed478748ce86e4effd7
   - enabled: 1
-    path: Assets/Scenes/Abstraction.unity
+    path: Assets/Scenes/1_Abstraction.unity
     guid: c37d528355b4c1d45a9528b823461087
   - enabled: 1
-    path: Assets/Scenes/Inheritance.unity
+    path: Assets/Scenes/2_Inheritance.unity
     guid: 330596fc5a0f4f34db57f5cdd172d2dd
   - enabled: 1
-    path: Assets/Scenes/Polymorphism.unity
+    path: Assets/Scenes/3_Polymorphism.unity
     guid: 4d6118311b12e5b4e96b7f992edac802
   - enabled: 1
-    path: Assets/Scenes/Encapsulation.unity
+    path: Assets/Scenes/4_Encapsulation.unity
     guid: dc011ff589b7b5840addeaa213eeb494
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
