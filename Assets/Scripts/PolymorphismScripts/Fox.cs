@@ -17,6 +17,7 @@ public class Fox : Animal
         Movement();
 
     }
+    // Method overloading
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("River"))
@@ -32,7 +33,7 @@ public class Fox : Animal
             inRiver = false;
         }
     }
-
+    // Method overriding
     public override void Movement()
     {
         transform.Translate(Vector3.forward * Time.deltaTime);

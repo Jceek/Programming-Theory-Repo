@@ -26,7 +26,7 @@ public class Dog : Animal
             Movement();
         }
     }
-
+    // Method overloading
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("River"))
@@ -41,7 +41,7 @@ public class Dog : Animal
             inRiver = false;
         }
     }
-
+    // Method overriding
     public override void Movement()
     {
         transform.Translate(Vector3.right * dogWalk * Time.deltaTime);

@@ -17,9 +17,9 @@ public class Cat : Animal
     {
         Movement();
     }
-
-    protected override void OnTriggerEnter(Collider other)
-    {
+    // Method Overloading
+    protected override void OnTriggerEnter(Collider other)      // Overloading the abstract method of colliders triggering 
+    {                                                           // each other and doing an animal specific action
         if (other.CompareTag("River"))
         {
             Jump();
@@ -29,13 +29,15 @@ public class Cat : Animal
     {
 
     }
-
-    public override void Movement()
+    // Method overriding
+    public override void Movement()                             // Overriding the movement method and using it for an animal specific action
+                                                                // We can still use the base.Movement() method
+                                                                // to use the original method from the class we inherit from
     {
         transform.Translate(Vector3.forward * smallCatSpeed * Time.deltaTime);
     }
 
-    public override void Jump()
+    public override void Jump()                                 // Same overriding of the jump method
     {
         animalBody.AddForce(Vector3.up * jumpForce * smallCatJump, ForceMode.Impulse);
         animalBody.AddForce(Vector3.right * jumpForce * smallCatJump, ForceMode.Impulse);
