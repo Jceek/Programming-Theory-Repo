@@ -5,12 +5,15 @@ public class InheritanceSpawn : MonoBehaviour
 {
     public GameObject[] spawnSquad;
     private Vector3 spawnPos;
-    private float spawnX = 25f;
+    private float spawnX;
     private float spawnZ = -11;
+    private float spawnY = 1.2f;
+
+    private float xRange = 25;
+
     private float spawnStart = 5.0f;
     private float spawnDelay = 5.0f;
-    private float spawnY = 1.2f;
-    private float xRange = 25;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

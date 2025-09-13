@@ -316,31 +316,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In this example we specifically didn''t change the speed of vehicles
-
-    based
-    on their type so we can showcase same vehicle behaviour
-
-    by inheriting from
-    the same class. Also overriding methods
-
-    or variables is in part a case of
-    Polymorphism, which we cover later.
-
-
-    While we only inherit 1 method in this
-    example, the possibilites
-
-    of saving code and having children inherit from
-    parents for cleaner
-
-    game design are nearly endless.
-
-
-    Hope you don''t
-    mind the wonky spawns :=)
-
-'
+  m_text: "In this example we specifically didn't change the speed of vehicles\nbased
+    on their type so we can showcase same vehicle behaviour\nby inheriting from the
+    same class. Also overriding methods\nor variables is in part a case of Polymorphism,
+    which we cover later.\n\nWhile we only inherit 1 method in this example, the
+    process \nof saving time by having children inherit from parents for cleaner\ncode
+    design will result in improved efficiency and better workflow.\n\nHope you don't
+    mind the wonky spawns :=)\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

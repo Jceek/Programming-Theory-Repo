@@ -1,22 +1,32 @@
 using UnityEngine;
 
-public class Fox : Animal
+public class Dog : Animal
 {
+    private float dogWalk = 0.9f;
+    private float dogRotateForce = 20.0f;
     public bool inRiver = false;
-    private float spawnStart = 3.5f;
-    private float spawnDelay = 1.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animalBody = GetComponent<Rigidbody>();
-        InvokeRepeating("Jump", spawnStart, spawnDelay);
     }
+
     // Update is called once per frame
     void Update()
     {
         Movement();
-
+        if (inRiver)
+        {
+            base.Movement();
+            transform.Rotate(-Vector3.right * speed * dogRotateForce * Time.deltaTime, Space.Self);
+        }
+        else
+        {
+            Movement();
+        }
     }
+
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("River"))
@@ -28,17 +38,12 @@ public class Fox : Animal
     {
         if (other.CompareTag("River"))
         {
-            CancelInvoke("Jump");
             inRiver = false;
         }
     }
 
     public override void Movement()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime);
-    }
-    public override void Jump()
-    {
-        animalBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        transform.Translate(Vector3.right * dogWalk * Time.deltaTime);
     }
 }

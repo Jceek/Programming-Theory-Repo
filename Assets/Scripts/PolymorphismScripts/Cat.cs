@@ -1,38 +1,43 @@
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 public class Cat : Animal
 {
-    public bool isActivated = false;
-    private bool isDelayed = false;
-    private float firstDelay = 3.5f;
-    private float secondDelay = 4.5f;
-
+    private float smallCatJump = 0.66f;
+    private float smallCatSpeed = 1.6f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animalBody = GetComponent<Rigidbody>();
-        Invoke("ActivateMethod", firstDelay);
-        Invoke("Jump", secondDelay);
-        Invoke("RotateBody", secondDelay);
-        Invoke("Jump", secondDelay + 2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActivated)
+        Movement();
+    }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("River"))
         {
-            Movement();
+            Jump();
         }
+    }
+    protected override void OnTriggerExit(Collider other)
+    {
 
     }
-    private void ActivateMethod()
+
+    public override void Movement()
     {
-        isActivated = true;
+        transform.Translate(Vector3.forward * smallCatSpeed * Time.deltaTime);
     }
 
-    private void RotateBody()
+    public override void Jump()
     {
-        animalBody.rotation = Quaternion.Euler(0f, 45f, 0f);
+        animalBody.AddForce(Vector3.up * jumpForce * smallCatJump, ForceMode.Impulse);
+        animalBody.AddForce(Vector3.right * jumpForce * smallCatJump, ForceMode.Impulse);
     }
 }
