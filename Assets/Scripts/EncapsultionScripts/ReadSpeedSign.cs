@@ -9,13 +9,15 @@ public class ReadSpeedSign : MonoBehaviour
 {
     public TextMeshPro speedMeter;
     public float carSpeed;
+    public CarFullEncapsulated carFullEncapsulated;
     public CarEncapsulated carEncapsulated;
     public CarPublic carPublic;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        carPublic = GameObject.Find("ColorCubePublic").GetComponent<CarPublic>();
-        carEncapsulated = GameObject.Find("ColorCubeEncapsulated").GetComponent<CarEncapsulated>();
+        carPublic = GameObject.Find("CarPublic").GetComponent<CarPublic>();
+        carEncapsulated = GameObject.Find("CarEncapsulated").GetComponent<CarEncapsulated>();
+        carFullEncapsulated = GameObject.Find("CarFullEncapsulated").GetComponent<CarFullEncapsulated>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class ReadSpeedSign : MonoBehaviour
     {
         speedMeter.text = carSpeed + " km/h";
     }
+    // ENCAPSULATION example - Here we read out the public speed value without problems. (Encapsulated Car speed
+    // is inside a getter and setter)
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CarPublic"))
@@ -32,6 +36,10 @@ public class ReadSpeedSign : MonoBehaviour
         if (other.CompareTag("CarEncapsulated"))
         {
             carSpeed = carEncapsulated.speed;
+        }
+        if (other.CompareTag("CarFullEncapsulated"))
+        {
+            carSpeed = carFullEncapsulated.speed;
         }
         return;
     }

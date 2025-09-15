@@ -6,6 +6,7 @@ using UnityEditor.Build.Content;
 public class ChangeColorSign : MonoBehaviour
 {
     private MeshRenderer meshSign;
+    public CarFullEncapsulated carFullEncapsulated;
     public CarEncapsulated carEncapsulated;
     public CarPublic carPublic;
     public Color newSignColor;
@@ -14,8 +15,9 @@ public class ChangeColorSign : MonoBehaviour
     void Start()
     {
         meshSign = GetComponent<MeshRenderer>();
-        carEncapsulated = GameObject.Find("ColorCubeEncapsulated").GetComponent<CarEncapsulated>();
-        carPublic = GameObject.Find("ColorCubePublic").GetComponent<CarPublic>();
+        carFullEncapsulated = GameObject.Find("CarFullEncapsulated").GetComponent<CarFullEncapsulated>();
+        carEncapsulated = GameObject.Find("CarEncapsulated").GetComponent<CarEncapsulated>();
+        carPublic = GameObject.Find("CarPublic").GetComponent<CarPublic>();
         ChangeSignColor();
     }
 
@@ -24,6 +26,14 @@ public class ChangeColorSign : MonoBehaviour
     {
         
     }
+    // ENCAPSULATION example - while this is not perfect, a different approach to reading a variable is a way to provide safety.
+    // we can only make certain methods readable from outside, while other methods change behaviour inside a class.
+    // Here we change a color either through the meshrenderer directly, or add a layer with a method.
+    // I know that an external script could still access some mesh renderer properties of the encapsulated car.
+    // I don't have enough knowledge right now to protect non-number variables like the speed variable - but having
+    // different methods for different actions is a good compromise.
+    // If we leave the SetCarcolor method empty in the original script, this would work and not change it's color.
+    // like with the CarFullEncapsulated
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CarPublic"))
@@ -32,7 +42,12 @@ public class ChangeColorSign : MonoBehaviour
         }
         if (other.CompareTag("CarEncapsulated"))
         {
-            CarEncapsulated.rendEncapsulated.material.color = meshSign.material.color;
+            // Use the encapsulated method to set the color - with help from Unity AI
+            carEncapsulated.SetCarColor(meshSign.material.color);
+        }
+        if (other.CompareTag("CarFullEncapsulated"))
+        {
+            carFullEncapsulated.SetCarColor(meshSign.material.color);
         }
 
     }

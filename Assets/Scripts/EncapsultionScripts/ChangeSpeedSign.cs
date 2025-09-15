@@ -8,16 +8,16 @@ using TMPro;
 public class ChangeSpeedSign : MonoBehaviour
 {
     public TextMeshPro speedMeter;
-    public int carSpeed = -3;
+    public float carSpeed = -3;
+    public CarFullEncapsulated carFullEncapsulated;
     public CarEncapsulated carEncapsulated;
     public CarPublic carPublic;
-    private int carMinSpeed = 1;
-    private int carMaxSpeed = 15;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        carPublic = GameObject.Find("ColorCubePublic").GetComponent<CarPublic>();
-        carEncapsulated = GameObject.Find("ColorCubeEncapsulated").GetComponent<CarEncapsulated>();
+        carPublic = GameObject.Find("CarPublic").GetComponent<CarPublic>();
+        carEncapsulated = GameObject.Find("CarEncapsulated").GetComponent<CarEncapsulated>();
+        carFullEncapsulated = GameObject.Find("CarFullEncapsulated").GetComponent<CarFullEncapsulated>();
         carSpeed = -3;
     }
 
@@ -26,6 +26,9 @@ public class ChangeSpeedSign : MonoBehaviour
     {
         speedMeter.text = carSpeed + " km/h";
     }
+    // ENCAPSULATION example - here the checkpoint could set the speed of both cars to a specified value.
+    // Our encapsulated car only accepts positive integers - thus it won't be affected by the change.
+    // the public car will be set to reverse.
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CarPublic"))
@@ -35,6 +38,10 @@ public class ChangeSpeedSign : MonoBehaviour
         if (other.CompareTag("CarEncapsulated"))
         {
             carEncapsulated.speed = carSpeed;
+        }
+        if (other.CompareTag("CarFullEncapsulated"))
+        {
+            carFullEncapsulated.speed = carSpeed;
         }
     }
 }

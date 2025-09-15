@@ -4,9 +4,8 @@ using TMPro;
 public class CarPublic : MonoBehaviour
 {
     public Color newCarColor;
-    public int speed = 2;
+    public float speed = 2.1f;
     public MeshRenderer rendPublic;
-    public float jumpForce = 150.0f;
     private Rigidbody cubeRb;
     public float randomChannelOne, randomChannelTwo, randomChannelThree;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
