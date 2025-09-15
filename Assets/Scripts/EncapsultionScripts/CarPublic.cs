@@ -1,17 +1,19 @@
 using UnityEngine;
+using TMPro;
 
-public class PublicCar : MonoBehaviour
+public class CarPublic : MonoBehaviour
 {
-    public float speed = 2.0f;
-    public MeshRenderer rendPublic;
     public Color newCarColor;
-    public Rigidbody carRb;
+    public int speed = 2;
+    public MeshRenderer rendPublic;
+    public float jumpForce = 150.0f;
+    private Rigidbody cubeRb;
     public float randomChannelOne, randomChannelTwo, randomChannelThree;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cubeRb = GetComponent<Rigidbody>();
         rendPublic = GetComponent<MeshRenderer>();
-        carRb = GetComponent<Rigidbody>();
         ChangeCarColor();
     }
 

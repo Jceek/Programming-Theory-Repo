@@ -6,9 +6,8 @@ TagManager:
   tags:
   - River
   - NoRiver
-  - Cube
-  - EncapsulatedCar
-  - PublicCar
+  - CarPublic
+  - CarEncapsulated
   layers:
   - Default
   - TransparentFX

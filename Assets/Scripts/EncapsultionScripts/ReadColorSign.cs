@@ -6,16 +6,14 @@ using UnityEditor.Build.Content;
 public class ReadColorSign : MonoBehaviour
 {
     private MeshRenderer meshSign;
-    public ColorCubeTest cubeChange;
-    public EncapsulatedCar carEncapsulated;
-    public PublicCar carPublic;
+    public CarPublic cubeOne;
+    public CarEncapsulated cubeTwo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         meshSign = GetComponent<MeshRenderer>();
-        cubeChange = GameObject.Find("ColorCube").GetComponent<ColorCubeTest>();
-        carEncapsulated = GameObject.Find("Encapsulator").GetComponent<EncapsulatedCar>();
-        carPublic = GameObject.Find("Publicator").GetComponent<PublicCar>();
+        cubeOne = GameObject.Find("ColorCubePublic").GetComponent<CarPublic>();
+        cubeTwo = GameObject.Find("ColorCubeEncapsulated").GetComponent<CarEncapsulated>();
     }
 
     // Update is called once per frame
@@ -25,17 +23,13 @@ public class ReadColorSign : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cube"))
+        if (other.CompareTag("CarPublic"))
         {
-            meshSign.material.color = cubeChange.rendPublic.material.color;
+            meshSign.material.color = cubeOne.rendPublic.material.color;
         }
-        if (other.CompareTag("EncapsulatedCar"))
+        if (other.CompareTag("CarEncapsulated"))
         {
-            meshSign.material.color = carEncapsulated.rendEncapsulated.material.color;
-        }
-        if (other.CompareTag("PublicCar"))
-        {
-            meshSign.material.color = carPublic.rendPublic.material.color;
+            meshSign.material.color = CarEncapsulated.rendEncapsulated.material.color;
         }
 
     }

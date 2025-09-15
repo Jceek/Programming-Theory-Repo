@@ -258,6 +258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4905043785554aa45157e96619e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorSign
+  carEncapsulated: {fileID: 0}
+  carPublic: {fileID: 0}
+  newSignColor: {r: 0, g: 0, b: 0, a: 0}
+  randomChannelOne: 0
+  randomChannelTwo: 0
+  randomChannelThree: 0
 --- !u!1 &1529243488859838369
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +411,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4905043785554aa45157e96619e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorSign
+  carEncapsulated: {fileID: 0}
+  carPublic: {fileID: 0}
+  newSignColor: {r: 0, g: 0, b: 0, a: 0}
+  randomChannelOne: 0
+  randomChannelTwo: 0
+  randomChannelThree: 0
 --- !u!1 &3551351228958847584
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +564,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4905043785554aa45157e96619e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorSign
+  carEncapsulated: {fileID: 0}
+  carPublic: {fileID: 0}
+  newSignColor: {r: 0, g: 0, b: 0, a: 0}
+  randomChannelOne: 0
+  randomChannelTwo: 0
+  randomChannelThree: 0
 --- !u!1 &4449956755665332818
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b4905043785554aa45157e96619e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorSign
+  carEncapsulated: {fileID: 0}
+  carPublic: {fileID: 0}
+  newSignColor: {r: 0, g: 0, b: 0, a: 0}
+  randomChannelOne: 0
+  randomChannelTwo: 0
+  randomChannelThree: 0
 --- !u!1 &6016546158223714468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1138,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7813025030121060009}
   - component: {fileID: 1127042090235245434}
-  - component: {fileID: 5516576701393947342}
   m_Layer: 0
   m_Name: RaceTrackSignColorChange
   m_TagString: Untagged
@@ -1162,15 +1185,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 18.781715, y: 7.7244544, z: 1.1197929}
   m_Center: {x: 0.023010254, y: -2.6808088, z: 0.01978302}
---- !u!114 &5516576701393947342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847897263275624063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a777a7f675f1ebd4e8f7c2535a8d7cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrackSignColor
