@@ -1,17 +1,18 @@
 using UnityEngine;
 
-public class PublicCar : MonoBehaviour
+public class ColorCubeTest : MonoBehaviour
 {
+    public Color newCarColor;
     public float speed = 2.0f;
     public MeshRenderer rendPublic;
-    public Color newCarColor;
-    public Rigidbody carRb;
+    public float jumpForce = 150.0f;
+    private Rigidbody cubeRb;
     public float randomChannelOne, randomChannelTwo, randomChannelThree;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cubeRb = GetComponent<Rigidbody>();
         rendPublic = GetComponent<MeshRenderer>();
-        carRb = GetComponent<Rigidbody>();
         ChangeCarColor();
     }
 
@@ -29,5 +30,13 @@ public class PublicCar : MonoBehaviour
         newCarColor = new Color(randomChannelOne, randomChannelTwo, randomChannelThree, 1f);
         rendPublic.material.color = newCarColor;
         return;
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+
+    }
+    public void Jump()
+    {
+        cubeRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
