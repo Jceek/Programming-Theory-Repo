@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System;
+using System.Collections.Generic;
+// POLYMORPHISM + inheritance : for our intro cat we derive from the cat class which derives from the animal class 
 public class CatIntro : Cat
 {
     public bool isActivated = false;
@@ -38,6 +40,7 @@ public class CatIntro : Cat
     {
         animalBody.rotation = Quaternion.Euler(0f, 45f, 0f);
     }
+    // POLYMORPHISM : Method overriding
     public override void Movement()
     {
         animalBody.AddForce(Vector3.forward * speed * fatCat, ForceMode.Acceleration);

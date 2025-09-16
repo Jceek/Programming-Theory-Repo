@@ -1,12 +1,11 @@
 using UnityEngine;
-using TMPro;
-
+// ENCAPSULATION : everything in this script is open for access
 public class CarPublic : MonoBehaviour
 {
     public Color newCarColor;
     public float speed = 2.1f;
     public MeshRenderer rendPublic;
-    private Rigidbody cubeRb;
+    public Rigidbody cubeRb;
     public float randomChannelOne, randomChannelTwo, randomChannelThree;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

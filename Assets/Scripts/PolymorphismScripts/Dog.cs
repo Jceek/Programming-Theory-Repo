@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System;
+using System.Collections.Generic;
+// POLYMORPHISM + inheritance : we derive from the animal class so we have access to it's methods and variables which we use and change
 public class Dog : Animal
 {
     private float dogWalk = 0.9f;
@@ -11,8 +13,7 @@ public class Dog : Animal
     {
         animalBody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
+    // POLYMORPHISM : Equally using our overriden methods as well as base version from the animal class.
     void Update()
     {
         Movement();
@@ -26,7 +27,7 @@ public class Dog : Animal
             Movement();
         }
     }
-    // Method overloading
+    // POLYMORPHISM : Method overloading
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("River"))
@@ -41,7 +42,7 @@ public class Dog : Animal
             inRiver = false;
         }
     }
-    // Method overriding
+    // POLYMORPHISM : Method overriding
     public override void Movement()
     {
         transform.Translate(Vector3.right * dogWalk * Time.deltaTime);

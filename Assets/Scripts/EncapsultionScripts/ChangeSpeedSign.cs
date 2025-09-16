@@ -19,15 +19,16 @@ public class ChangeSpeedSign : MonoBehaviour
         carEncapsulated = GameObject.Find("CarEncapsulated").GetComponent<CarEncapsulated>();
         carFullEncapsulated = GameObject.Find("CarFullEncapsulated").GetComponent<CarFullEncapsulated>();
         carSpeed = -3;
+        speedMeter.text = carSpeed + " km/h";
     }
 
     // Update is called once per frame
     void Update()
     {
-        speedMeter.text = carSpeed + " km/h";
+
     }
-    // ENCAPSULATION example - here the checkpoint could set the speed of both cars to a specified value.
-    // Our encapsulated car only accepts positive integers - thus it won't be affected by the change.
+    // ENCAPSULATION example - here the checkpoint could set the speed of all cars to a specified value.
+    // Our encapsulated cars only accept positive integers - thus it won't be affected by the change.
     // the public car will be set to reverse.
     private void OnTriggerEnter(Collider other)
     {

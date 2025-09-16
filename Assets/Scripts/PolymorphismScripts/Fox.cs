@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System;
+using System.Collections.Generic;
+// POLYMORPHISM + inheritance : we derive from the animal class so we have access to it's methods and variables which we use and change
 public class Fox : Animal
 {
     public bool inRiver = false;
@@ -17,7 +19,7 @@ public class Fox : Animal
         Movement();
 
     }
-    // Method overloading
+    // POLYMORPHISM : Method overloading
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("River"))
@@ -33,7 +35,7 @@ public class Fox : Animal
             inRiver = false;
         }
     }
-    // Method overriding
+    // POLYMORPHISM : Method overriding
     public override void Movement()
     {
         transform.Translate(Vector3.forward * Time.deltaTime);

@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         
-        Invoke("SpawnCar", spawnStart -2);                      // Abstraction from here on out
+        Invoke("SpawnCar", spawnStart -2);                      // ABSTRACTION from here on out
         InvokeRepeating(("SpawnCar"), spawnStart, spawnDelay);
         InvokeRepeating(("SpawnCarReverse"), spawnStart, spawnDelay);
         Invoke("SpawnCarReverse", spawnStart -2);
@@ -23,13 +23,13 @@ public class SpawnManager : MonoBehaviour
         CalculateSpawn();
     }
        
-    // Creating an abstracted method  that we can reuse easily
+    // Creating an ABSTRACTION method  that we can reuse easily
     void SpawnCar()
     {
         Vector3 spawnPos = new Vector3(spawnRange, 1, spawnRange);
         Instantiate(car, spawnPos, Quaternion.Euler(0, -90, 0));
     }
-    // Creating an abstracted method  that we can reuse easily
+    // Creating an ABSTRACTION method  that we can reuse easily
     void SpawnCarReverse()            
     {
         Vector3 spawnPos = new Vector3(-spawnRange, 1, -spawnRange);
@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
     }
     void CalculateSpawn()
     {
-            spawnRange = Random.Range(1, 10);       // Abstracted variable, is being calculated here, then reused everywhere we need it.
+            spawnRange = Random.Range(1, 10);       // ABSTRACTED variable, is being calculated here, then reused everywhere we need it.
     }
 }
 

@@ -30,7 +30,7 @@ public class ChangeColorSign : MonoBehaviour
     // we can only make certain methods readable from outside, while other methods change behaviour inside a class.
     // Here we change a color either through the meshrenderer directly, or add a layer with a method.
     // I know that an external script could still access some mesh renderer properties of the encapsulated car.
-    // I don't have enough knowledge right now to protect non-number variables like the speed variable - but having
+    // I don't have enough knowledge right now to protect non-number variables (with speed it was doable) - but having
     // different methods for different actions is a good compromise.
     // If we leave the SetCarcolor method empty in the original script, this would work and not change it's color.
     // like with the CarFullEncapsulated

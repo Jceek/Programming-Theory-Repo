@@ -60,7 +60,7 @@ public class CarEncapsulated : MonoBehaviour
         newCarColor = color;
         rendEncapsulated.material.color = newCarColor;
     }
-    // A simple GetCarColor method to just read out the car color, but not be able to change it through this method
+    // ENCAPSULATION : A simple GetCarColor method to just read out the car color, but not be able to change it through this method
     // with the help from Unity AI - this is part of Encapsulation and the AI helped my understanding of the matter a lot
     public Color GetCarColor()
     {

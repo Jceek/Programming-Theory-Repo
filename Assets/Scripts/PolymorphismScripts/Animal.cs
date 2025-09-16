@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Collections;
-
+// POLYMORPHISM + Inheritance : we inherit from this class so we can change the methods or use base versions of them
 public abstract class Animal : MonoBehaviour
 {
     public Rigidbody animalBody;
@@ -20,16 +20,16 @@ public abstract class Animal : MonoBehaviour
 
     }
     // Method Overriding
-    public virtual void Movement()      // setting method to virtual -> it can later be overridden to be modified
+    public virtual void Movement()      // POLYMORPHISM : setting method to virtual -> it can later be overridden to be modified
     {
         animalBody.AddForce(Vector3.right * speed * Time.deltaTime, ForceMode.Acceleration);
     }
 
-    public virtual void Jump()          // setting method to virtual -> it can later be overridden to be modified
+    public virtual void Jump()          // POLYMORPHISM : setting method to virtual -> it can later be overridden to be modified
     {
         animalBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
-    // Method Overloading 
+    // POLYMORPHISM : Method Overloading 
     protected abstract void OnTriggerEnter(Collider other);     // Setting a method to an abstract state - not defining any action - children inheriting from
     protected abstract void OnTriggerExit(Collider other);      // this class will need to use that method - and each one will use it in a specific manner
 

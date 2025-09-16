@@ -13,7 +13,7 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveForward();          // Abstracted method , reusable
+        MoveForward();          // ABSTRACTION method , reusable
     }
     public void MoveForward()
     {

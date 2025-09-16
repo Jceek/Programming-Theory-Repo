@@ -26,7 +26,7 @@ public class InheritanceSpawn : MonoBehaviour
 
 
     }
-    void SpawnEverythingAtOnce()
+    void SpawnEverythingAtOnce()   
     {
         for (int i = 0; i < spawnSquad.Length; i++)
         {
