@@ -9,6 +9,8 @@ TagManager:
   - CarPublic
   - CarEncapsulated
   - CarFullEncapsulated
+  - PublicCar
+  - EncapsulatedCar
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Title
   - 
   - 
   - 
@@ -45,6 +47,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 3302023831
+    locked: 0
+  - name: 2
+    uniqueID: 297615677
     locked: 0
   m_RenderingLayers:
   - Default
